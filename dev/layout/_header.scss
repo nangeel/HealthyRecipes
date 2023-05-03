@@ -19,3 +19,11 @@
     z-index: -1;
     justify-content: center;
 }
+
+@media (max-width: 980px) {
+    .title {
+        @include mixins.font(variables.$ff-primary, variables.$fs-lg, variables.$clr-black);
+        padding-top: 16rem;
+        text-align: center;
+    }
+}
