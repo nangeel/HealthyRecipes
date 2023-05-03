@@ -20,3 +20,31 @@
 footer {
     background-color: variables.$clr-green-two;
 }
+
+
+//form
+.form-label {
+    font-family: variables.$ff-secondary;
+}
+
+.container-form {
+    width: 300px;
+    height: 600px;
+    margin-left: 46rem;
+    padding-top: 7rem;
+}
+
+.dropdown-page {
+    @include mixins.font(variables.$ff-secondary, variables.$fs-xsm, variables.$clr-black);
+}
+
+.modal-content {
+    background: variables.$clr-green-two;
+    font-family: variables.$ff-secondary;
+    color: variables.$clr-black;
+    margin: auto;
+}
+
+.form-control {
+    background: variables.$clr-green-two;
+}
