@@ -1,0 +1,28 @@
+.img-thumbnail {
+    width: 400px;
+    height: 300px;
+    border-color: variables.$clr-green-two;
+
+}
+
+.title-recipe {
+    @include mixins.font(variables.$ff-primary, variables.$fs-xmed, variables.$clr-green-one);
+    padding-top: 8rem;
+    text-align: center;
+}
+
+.text-description {
+    @include mixins.font(variables.$ff-secondary, variables.$fs-xsm, variables.$clr-black);
+    padding-bottom: 1rem;
+}
+
+.text-recipe {
+    @include mixins.font(variables.$ff-tertiary, variables.$fs-xxsm, variables.$clr-black);
+    font-weight: variables.$fw-semibold;
+
+}
+
+.detail {
+    font-family: variables.$ff-secondary;
+    font-size: variables.$fs-xxxsm;
+}
