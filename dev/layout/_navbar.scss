@@ -1,0 +1,24 @@
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'base/base';
+@use 'base/typography';
+
+.navbar {
+    background-color: variables.$clr-green-two;
+}
+
+.offcanvas {
+    background-color: variables.$clr-green-two;
+}
+
+.offcanvas-title {
+    @include mixins.font(variables.$ff-secondary, variables.$fs-xxsm, variables.$clr-black);
+}
+
+.nav-link {
+    @include mixins.font(variables.$ff-secondary, variables.$fs-xxsm, variables.$clr-black);
+}
+
+.dropdown-item {
+    @include mixins.font(variables.$ff-secondary, variables.$fs-xxxsm, variables.$clr-black);
+}

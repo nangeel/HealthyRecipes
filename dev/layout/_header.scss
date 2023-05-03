@@ -1,3 +1,21 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+.title {
+    @include mixins.font(variables.$ff-primary, variables.$fs-lg, variables.$clr-green-one);
+    padding-top: 16rem;
+    text-align: center;
+}
+
+.img-principal {
+    padding-top: 5rem;
+    justify-content: center;
+}
+
+.square {
+    @include mixins.size(37.5rem, 50rem);
+    border-bottom-left-radius: 3.125rem;
+    background-color: variables.$clr-green-two;
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    z-index: -1;
+    justify-content: center;
+}
