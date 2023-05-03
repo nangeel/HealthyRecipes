@@ -9,6 +9,12 @@
   width: $width;
 }
 
+@mixin font($ffamily, $fsize, $color) {
+  font-family: $ffamily;
+  font-size: $fsize;
+  color: $color;
+}
+
 @mixin overlay($position, $bg, $height, $width) {
   position: $position;
   background-color: $bg;

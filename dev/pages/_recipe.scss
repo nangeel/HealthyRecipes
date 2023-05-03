@@ -1,3 +1,7 @@
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'base/base';
+
 .img-thumbnail {
     width: 400px;
     height: 300px;

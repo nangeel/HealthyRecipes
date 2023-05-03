@@ -1,3 +1,7 @@
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'base/base';
+
 //top 10 recipes
 
 .color-one {
@@ -27,12 +31,6 @@ footer {
     font-family: variables.$ff-secondary;
 }
 
-.container-form {
-    width: 300px;
-    height: 600px;
-    margin-left: 46rem;
-    padding-top: 7rem;
-}
 
 .dropdown-page {
     @include mixins.font(variables.$ff-secondary, variables.$fs-xsm, variables.$clr-black);

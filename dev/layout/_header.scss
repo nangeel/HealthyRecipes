@@ -1,3 +1,6 @@
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
 .title {
     @include mixins.font(variables.$ff-primary, variables.$fs-lg, variables.$clr-green-one);
     padding-top: 16rem;

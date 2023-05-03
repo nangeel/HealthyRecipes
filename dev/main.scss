@@ -1,35 +1,13 @@
-@charset "UTF-8";
+@use 'abstracts/mixins';
+@use 'abstracts/variables';
 
-// 1. Configuration and helpers
-@import
-  'abstracts/variables',
-  'abstracts/functions',
-  'abstracts/mixins';
+@use 'base/base';
 
-// 2. Vendors
-@import
-  'vendors/normalize';
+@use 'layout/footer';
+@use 'layout/header';
+@use 'layout/navbar';
 
-// 3. Base stuff
-@import
-  'base/base',
-  'base/fonts',
-  'base/typography',
-  'base/helpers';
+@use 'components/button';
 
-// 4. Layout-related sections
-@import
-  'layout/header',
-  'layout/footer';
-
-// 5. Components
-@import
-  'components/button';
-
-// 6. Page-specific styles
-@import
-  'pages/home';
-
-// 7. Themes
-@import
-  'themes/default';
+@use 'pages/home';
+@use 'pages/recipe';

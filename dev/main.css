@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+}
+
+.header {
+  height: 43.75rem;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Comfortaa";
+  font-size: 3.438rem;
+  color: hsl(67deg, 33%, 41%);
+  font-weight: 600;
+}
+
+h3 {
+  font-family: "Comfortaa";
+  font-size: 1.563rem;
+  color: hsl(67deg, 33%, 41%);
+  font-weight: 700;
+  margin-left: 7rem;
+}
+
+.title {
+  font-family: "Aclonica", sans-serif;
+  font-size: 4.375rem;
+  color: hsl(67deg, 33%, 41%);
+  padding-top: 16rem;
+  text-align: center;
+}
+
+.img-principal {
+  padding-top: 5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.square {
+  height: 37.5rem;
+  width: 50rem;
+  border-bottom-left-radius: 3.125rem;
+  background-color: hsl(67deg, 50%, 50%);
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  z-index: -1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 980px) {
+  .title {
+    font-family: "Aclonica", sans-serif;
+    font-size: 4.375rem;
+    color: hsl(0deg, 0%, 0%);
+    padding-top: 16rem;
+    text-align: center;
+  }
+}
+.navbar {
+  background-color: hsl(67deg, 50%, 50%);
+}
+
+.offcanvas {
+  background-color: hsl(67deg, 50%, 50%);
+}
+
+.offcanvas-title {
+  font-family: "Comfortaa";
+  font-size: 1.3rem;
+  color: hsl(0deg, 0%, 0%);
+}
+
+.nav-link {
+  font-family: "Comfortaa";
+  font-size: 1.3rem;
+  color: hsl(0deg, 0%, 0%);
+}
+
+.dropdown-item {
+  font-family: "Comfortaa";
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 0%);
+}
+
+.btn-primary {
+  font-family: "Comfortaa";
+  background: hsl(67deg, 54%, 67%);
+  border: none;
+  color: hsl(0deg, 0%, 0%);
+}
+.btn-primary:hover {
+  background: hsl(67deg, 33%, 41%);
+  color: hsl(0deg, 0%, 0%);
+}
+
+.btn-secondary {
+  background: hsl(67deg, 50%, 50%);
+  border: none;
+  color: hsl(0deg, 0%, 0%);
+  font-family: "Comfortaa";
+}
+.btn-secondary:hover {
+  background: hsl(67deg, 33%, 41%);
+  color: hsl(0deg, 0%, 0%);
+}
+
+.btn-title {
+  background: hsl(67deg, 50%, 50%);
+  border: none;
+  color: hsl(0deg, 0%, 0%);
+}
+.btn-title:hover {
+  background: hsl(67deg, 54%, 67%);
+  color: hsl(0deg, 0%, 0%);
+}
+
+.btn-modal-one {
+  margin-left: 9.5rem;
+}
+
+.color-one {
+  background-color: hsl(67deg, 54%, 67%);
+}
+
+.card-body {
+  background: hsl(67deg, 50%, 50%);
+  border-color: hsl(67deg, 50%, 50%);
+}
+
+.img-fest {
+  width: 5.625rem;
+  height: 6.25rem;
+}
+
+footer {
+  background-color: hsl(67deg, 50%, 50%);
+}
+
+.form-label {
+  font-family: "Comfortaa";
+}
+
+.dropdown-page {
+  font-family: "Comfortaa";
+  font-size: 1.563rem;
+  color: hsl(0deg, 0%, 0%);
+}
+
+.modal-content {
+  background: hsl(67deg, 50%, 50%);
+  font-family: "Comfortaa";
+  color: hsl(0deg, 0%, 0%);
+  margin: auto;
+}
+
+.form-control {
+  background: hsl(67deg, 50%, 50%);
+}
+
+.img-thumbnail {
+  width: 400px;
+  height: 300px;
+  border-color: hsl(67deg, 50%, 50%);
+}
+
+.title-recipe {
+  font-family: "Aclonica", sans-serif;
+  font-size: 3.438rem;
+  color: hsl(67deg, 33%, 41%);
+  padding-top: 8rem;
+  text-align: center;
+}
+
+.text-description {
+  font-family: "Comfortaa";
+  font-size: 1.563rem;
+  color: hsl(0deg, 0%, 0%);
+  padding-bottom: 1rem;
+}
+
+.text-recipe {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3rem;
+  color: hsl(0deg, 0%, 0%);
+  font-weight: 600;
+}
+
+.detail {
+  font-family: "Comfortaa";
+  font-size: 1rem;
+}

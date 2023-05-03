@@ -1,3 +1,6 @@
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
 .btn-primary {
     font-family: variables.$ff-secondary;
     background: variables.$clr-bg-two;
