@@ -1,7 +1,24 @@
-/**
- * Basic typography style for copy text
- */
-body {
-  color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+//font-family
+$ff-primary: 'Aclonica', sans-serif;
+$ff-secondary: 'Comfortaa';
+$ff-tertiary: 'Raleway', sans-serif;
+
+//font-weight
+$fw-regular: 400;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+//font-size
+$fs-lg: 4.375rem;
+$fs-xmed: 3.438rem;
+$fs-med: 3.125rem;
+$fs-sm: 1.875rem;
+$fs-xsm: 1.563rem;
+$fs-xxsm: 1.3rem;
+$fs-xxxsm: 1rem;
+
+@mixin font($ffamily, $fsize, $color) {
+  font-family: $ffamily;
+  font-size: $fsize;
+  color: $color;
 }

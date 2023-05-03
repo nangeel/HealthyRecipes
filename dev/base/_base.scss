@@ -1,35 +1,20 @@
-// -----------------------------------------------------------------------------
-// This file contains very basic styles.
-// -----------------------------------------------------------------------------
-
-/**
- * Set up a decent box model on the root element
- */
-html {
-  box-sizing: border-box;
+body {
+  margin: 0;
 }
 
-/**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+.header {
+  height: 43.75rem;
 }
 
-/**
- * Basic styles for links
- */
-a {
-  color: $brand-color;
-  text-decoration: none;
+h2 {
+  text-align: center;
+  @include mixins.font(variables.$ff-secondary, variables.$fs-xmed, variables.$clr-green-one);
+  font-weight: variables.$fw-semibold;
+}
 
-  @include on-event {
-    color: $text-color;
-    text-decoration: underline;
-  }
+
+h3 {
+  @include mixins.font(variables.$ff-secondary, variables.$fs-xsm, variables.$clr-green-one);
+  font-weight: variables.$fw-bold;
+  margin-left: 7rem;
 }
