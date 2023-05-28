@@ -1,46 +1,44 @@
 app.component('recipe-card', {
-    props:{
-        image:{
+    props: {
+        image: {
             type: String
         },
-        name:{
+        name: {
             type: String,
             default: "recipe name"
         },
-        likes:{
+        description: {
+            type: String,
+            default: "recipe description"
+        },
+        likes: {
             type: Number,
             default: 10
         },
     },
 
-data() {
-    return {
+    data() {
+        return {
 
-    }
-},
+        }
+    },
 
-template:
-    /*html*/
-    `<div class="card border border-0 ">
-        <img v-bind:src="image" class="card-img-top" alt="image-recipe">
-        <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
-        <button type="button" class="btn btn-primary"
-                            style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .7rem;">
-                            See More
-                        </button>
-                        <button type="button" class="btn btn-primary ms-3 " v-on:click="onClickLike()"
-                            style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .2rem; --bs-btn-font-size: .9rem;">
-                            ❤️
-                        </button>
-                        <button type="button" class="btn btn-primary ms-3 " v-on:click="onClickLike()"
-                            style="--bs-btn-padding-y: .5rem; --bs-btn-padding-x: .2rem; --bs-btn-font-size: .9rem;">
-                            💔
-                        </button>
-                        <p>{{}}</p>
-                        
-                        
-        </div>
-        
-    </div>`
+    template:
+        /*html*/
+        `<div class="card" style="width: 18rem;">
+    <img v-bind:src="image" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{name}}</h5>
+      <p class="card-text fst-italic">{{description}}</p>
+      <p class="card-text fw-semibold">{{likes}}</p>
+      <button  class="btn btn-primary">See More</button>
+      <div class= "text-end">
+      <div>
+      <button  class="btn btn-primary me-2">❤️</button>
+      <button  class="btn btn-primary">💔</button>
+      </div>
+      
+      </div>
+    </div>
+  </div>`
 })
