@@ -1,5 +1,21 @@
 app.component('recipe-details', {
-    
+    props: {
+        image: {
+            type: String
+        },
+        name: {
+            type: String,
+            default: "recipe name"
+        },
+        ingredients: {
+            type: String,
+            default: "recipe ingredients"
+        },
+        instructions: {
+            type: String,
+            default: "recipe instructions"
+        },
+    },
 
 
     template:

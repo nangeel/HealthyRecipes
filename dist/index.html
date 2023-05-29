@@ -157,9 +157,9 @@
         <div class="header pb-5">
             <div class="pt-5 ">
                 <div class="container d-flex flex-wrap gap-4 ">
-                    <div v-if="hasRecipes" v-for="(recipe, index) in recipes" class="col">
-                        <recipe-card image="./img/bnn.jpg" category="lunch" name="Sushi"
-                            description="Aquí va la descripción" :likes="18"></recipe-card>
+                    <div v-if="hasRecipes" v-for="(item, index) in recipes" class="">
+                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                            :description="item.description" :likes="item.likes"></recipe-card>
                     </div>
                     <p v-else class="fw-bold">No recipes for this category</p>
                 </div>
@@ -168,25 +168,8 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ recipes[selectedIndex].name }}</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="img-fluid" v-bind:src="recipes[selectedIndex].image"
-                            alt="{{ recipes[selectedIndex].name }}">
-                        <p class="text-center fs-6">{{ recipes[selectedIndex].ingredients }}</p>
-                        <p class="fst-italic fw-light fs-5">{{ recipes[selectedIndex].instructions }}</p>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-
+        <recipe-details ></recipe-details>
 
 
         <!-- js bs-->
@@ -208,7 +191,8 @@
         <script src="js/components/RecipeCategoryBtn.js"></script>
         <script src="js/components/RecipeHolidaysBtn.js"></script>
         <script src="js/components/RecipeDifficultyBtn.js"></script>
-    
+        <script src="js/components/RecipeDetails.js"></script>
+
 
         <!-- mounted -->
         <script>

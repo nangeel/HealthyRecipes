@@ -22,6 +22,28 @@ app.component('recipe-card', {
 
         }
     },
+    methods: {
+        onClickLike() {
+            console.log("like");
+            this.recipes[index].likes += 1;
+
+        },
+
+        onClickUnlike() {
+            console.log("unlike");
+            if (this.recipes[index].likes > 0) {
+                this.recipes[index].likes -= 1;
+            }
+        },
+
+        onClickViewRecipe() {
+            console.log("view recipe");
+            if (this.recipes[index].likes > 0) {
+                this.recipes[index].likes -= 1;
+            }
+        }
+
+    },
 
     template:
         /*html*/
@@ -31,11 +53,11 @@ app.component('recipe-card', {
       <h5 class="card-title">{{name}}</h5>
       <p class="card-text fst-italic">{{description}}</p>
       <p class="card-text fw-semibold">{{likes}}</p>
-      <button  class="btn btn-primary">See More</button>
+      <button  class="btn btn-primary" v-on:click="onClickViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >See More</button>
       <div class= "text-end">
       <div>
-      <button  class="btn btn-primary me-2">❤️</button>
-      <button  class="btn btn-primary">💔</button>
+      <button  class="btn btn-primary me-2" v-on:click="onClickLike()">❤️</button>
+      <button  class="btn btn-primary" v-on:click="onClickUnlike()">💔</button>
       </div>
       
       </div>
