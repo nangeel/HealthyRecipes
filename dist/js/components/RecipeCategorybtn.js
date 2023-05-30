@@ -5,11 +5,19 @@ app.component('recipe-category-btn', {
         },
 
     },
-    data() {
-    },
 
+methods: {
+    onClickCategoryButton() {
+        console.log(this.name);
+       this.$emit('selectedcategory', this.name);
+
+    }
+
+    
+
+},
     template:
     /*html*/
-    `<button class="dropdown-item">{{name}}</button>`
+    `<button class="btn btn-secondary" v-on:click="onClickCategoryButton">{{name}}</button>`
 })
 

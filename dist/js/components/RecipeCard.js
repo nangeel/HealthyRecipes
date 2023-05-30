@@ -15,6 +15,9 @@ app.component('recipe-card', {
             type: Number,
             default: 10
         },
+        index: {
+            type: String,
+        }
     },
 
     data() {
@@ -25,29 +28,26 @@ app.component('recipe-card', {
     methods: {
         onClickLike() {
             console.log("like");
-            this.recipes[index].likes += 1;
+            this.$emit('recipelike', this.index);
 
         },
 
         onClickUnlike() {
             console.log("unlike");
-            if (this.recipes[index].likes > 0) {
-                this.recipes[index].likes -= 1;
-            }
+            this.$emit('recipeunlike', this.index);
         },
 
         onClickViewRecipe() {
             console.log("view recipe");
-            if (this.recipes[index].likes > 0) {
-                this.recipes[index].likes -= 1;
-            }
+      this.$emit('recipedetails', this.index);
+           
         }
 
     },
 
     template:
         /*html*/
-        `<div class="card" style="width: 18rem;">
+        `<div class="card">
     <img v-bind:src="image" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{name}}</h5>
@@ -55,7 +55,6 @@ app.component('recipe-card', {
       <p class="card-text fw-semibold">{{likes}}</p>
       <button  class="btn btn-primary" v-on:click="onClickViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >See More</button>
       <div class= "text-end">
-      <div>
       <button  class="btn btn-primary me-2" v-on:click="onClickLike()">❤️</button>
       <button  class="btn btn-primary" v-on:click="onClickUnlike()">💔</button>
       </div>
