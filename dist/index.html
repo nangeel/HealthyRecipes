@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div class="container" id="app">
+    <div id="app">
         <!-- navbar-->
         <nav class="nav navbar fixed-top ">
             <div class="container-fluid">
@@ -51,101 +51,85 @@
                         data-bs-target="#exampleModa2">
                         Registrarse
                     </button>
-                    <div class="modal" id="exampleModa2">
-                        <div class="modal-dialog ">
-                            <div class="modal-content modal-sm">
-                                <div class="modal-body">
-                                    <form>
-                                        <img class="logo-img-modal" src="../dist/img/Recurso 2.webp" alt="">
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label">Nombre de
-                                                usuario:</label>
-                                            <input type="username" class="form-control" id="exampleInputUsername" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Correo:</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                                aria-describedby="emailHelp" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword2" class="form-label">Contraseña:</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword2" />
-                                        </div>
-                                        <div id="passwordHelp" class="form-text">
-                                            <p> La contraseña debe tener de 8-16 caractéres</p>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary my-5">
-                                            Registrar
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModa2">
-                        Login
-                    </button>
-                    <div class="modal" id="exampleModa2">
-                        <div class="modal-dialog">
-                            <div class="modal-content modal-sm">
-                                <div class="modal-body">
-                                    <form>
-                                        <img class="logo-img-modal" src="../dist/img/Recurso 2.webp" alt="">
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label">Nombre de
-                                                usuario:</label>
-                                            <input type="username" class="form-control" id="exampleInputUsername1" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" />
-                                        </div>
-                                        <button type="submit" class="btn btn-secondary my-5">
-                                            Registrar
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+
+                <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal"
+                    data-bs-target="#exampleModa2">
+                    Login
+                </button>
+
+
             </div>
 
         </section>
 
-        <!-- Recipes-->
-        <div class="row-2 nav gap-3 ">
-            <div v-for="(category, index) in categories" class="">
-                <recipe-category-btn :name="category.name"
-                    v-on:selectedcategory="onClickSelectedCategory"></recipe-category-btn>
-            </div>
 
+        <!-- Top 10-->
+        <div class="color-one pb-5">
+            <h2 class="pt-3 pb-3">Top 10 Recipes</h2>
+            <div class="container d-flex flex-wrap gap-4 ">
+                <section class="container">
+        
+                    <div class="header pb-5">
+                        <div class="pt-5 ">
+                            <div class="container d-flex flex-wrap gap-4 row-2">
+                                <div  v-for="(item, index) in top" class="col-md-2">
+                                    <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                                        :description="item.description" :likes="item.likes" :index="item.index"
+                                        v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
+                                        ></recipe-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Modal -->
+                    <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients"
+                        :instructions="recipe.instructions"></recipe-details>
+                    </section>
+            </div>
         </div>
 
 
-        <div class="header pb-5">
-            <div class="pt-5 ">
-                <div class="container d-flex flex-wrap gap-4 row">
-                    <div v-if="hasRecipes" v-for="(item, index) in recipes" class="col-md-3">
-                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
-                            :description="item.description" :likes="item.likes" :index="index"
-                            v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
-                            v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+
+
+
+
+        <!-- Recipes-->
+        <section class="container">
+            <h2 class="title-categories">Recipes by category</h2>
+            <div class="row-2 nav gap-3 categories ">
+                <div v-for="(category, index) in categories" class="">
+                    <recipe-category-btn :name="category.name"
+                        v-on:selectedcategory="onClickSelectedCategory"></recipe-category-btn>
+                </div>
+
+            </div>
+
+
+            <div class="header pb-5">
+                <div class="pt-5 ">
+                    <div class="container d-flex flex-wrap gap-4 row-2">
+                        <div v-if="hasRecipes" v-for="(item, index) in recipes" class="col-md-2">
+                            <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                                :description="item.description" :likes="item.likes" :index="item.id"
+                                v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
+                                v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                        </div>
+                        <p v-else class="fw-bold">No recipes for this category</p>
                     </div>
-                    <p v-else class="fw-bold">No recipes for this category</p>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients"
+                :instructions="recipe.instructions"></recipe-details>
+            </section>
+
+
+            <!-- Footer -->
+
         </div>
-
-        <!-- Modal -->
-        <recipe-details :image="recipes.image" :name="recipes.name" :ingredients="recipes.ingredients"
-            :instructions="recipes.instructions"></recipe-details>
-    </div>
-
-    <!-- Modal -->
-
 
 
 

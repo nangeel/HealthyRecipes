@@ -18,6 +18,3 @@
     @include mixins.font(variables.$ff-secondary, variables.$fs-xxsm, variables.$clr-black);
 }
 
-.dropdown-item {
-    @include mixins.font(variables.$ff-secondary, variables.$fs-xxxsm, variables.$clr-black);
-}

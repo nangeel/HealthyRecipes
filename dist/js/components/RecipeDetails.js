@@ -4,25 +4,18 @@ app.component('recipe-details', {
             type: String
         },
         name: {
-            type: String,
-            default: "recipe name"
+            type: String
         },
         ingredients: {
-            type: String,
-            default: "recipe ingredients"
+            type: String
         },
         instructions: {
-            type: String,
-            default: "recipe instructions"
+            type: String
         },
     },
 
     methods: {
-        onClickViewRecipe() {
-            console.log("view recipe");
-            //this.$emit('recipedetails', this.index);
-            this.$test.emit('foo', "works!");
-        },
+        
     },
     mounted() {
         this.$test.on('foo', function (data) {
@@ -34,20 +27,21 @@ app.component('recipe-details', {
 
     template:
         /*html*/
-        `  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ name }}</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <img class="img-fluid" v-bind:src="image"
-            alt="{{ name }}">
-        <p class="text-center fs-6">{{ ingredients }}</p>
-        <p class="fst-italic fw-light fs-5">{{ instructions }}</p>
-            </div>
+        `<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+             <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="staticBackdropLabel">{{ name }}</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img class="img-fluid" v-bind:src="image"
+                    alt="{{ name }}">
+                    <p class="text-center fs-6">{{ ingredients }}</p>
+                    <p class="fs-5 fst-italic fw-light fs-4">{{ instructions }}</p>
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>`
+       </div>`
 })

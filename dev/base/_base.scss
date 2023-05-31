@@ -11,8 +11,9 @@ body {
 
 h2 {
   text-align: center;
-  @include mixins.font(variables.$ff-secondary, variables.$fs-xmed, variables.$clr-green-one);
-  font-weight: variables.$fw-semibold;
+  @include mixins.font(variables.$ff-secondary, variables.$fs-lg, variables.$clr-green-one);
+  font-weight: variables.$fw-bold;
+  color: black;
 }
 
 

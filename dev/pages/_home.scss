@@ -23,6 +23,7 @@
 //footer
 footer {
     background-color: variables.$clr-green-two;
+    z-index: 1;
 }
 
 
@@ -46,3 +47,15 @@ footer {
 .form-control {
     background: variables.$clr-green-two;
 }
+
+.card-title{
+    color: black;
+    }
+
+    .title-categories{
+        padding-top: 10rem;
+    }
+
+    .categories{
+        padding-top: 3rem;
+    }
