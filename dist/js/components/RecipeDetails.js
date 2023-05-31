@@ -17,12 +17,7 @@ app.component('recipe-details', {
     methods: {
         
     },
-    mounted() {
-        this.$test.on('foo', function (data) {
-            console.log(data);
-        }
-        )
-    },
+    
 
 
     template:

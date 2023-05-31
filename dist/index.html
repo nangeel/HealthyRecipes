@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div class="container" id="app">
         <!-- navbar-->
         <nav class="nav navbar fixed-top ">
             <div class="container-fluid">
@@ -47,16 +47,72 @@
                 <h1 class="title col-lg-5 col-md-12">{{ title }}</h1>
 
                 <div class="">
-                    <button type="button" class="btn btn-primary btn-modal-one" data-bs-toggle="modal"
+                    <button type="button" class="btn btn-primary btn-modal-one me-5" data-bs-toggle="modal"
                         data-bs-target="#exampleModa2">
                         Registrarse
                     </button>
+                    <div class="modal" id="exampleModa2">
+                        <div class="modal-dialog ">
+                            <div class="modal-content modal-sm">
+                                <div class="modal-body">
+                                    <form>
+                                        <img class="logo-img-modal" src="../dist/img/Recurso 2.webp" alt="">
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Nombre de
+                                                usuario:</label>
+                                            <input type="username" class="form-control" id="exampleInputUsername" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Correo:</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword2" class="form-label">Contraseña:</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword2" />
+                                        </div>
+                                        <div id="passwordHelp" class="form-text">
+                                            <p> La contraseña debe tener de 8-16 caractéres</p>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary my-5">
+                                            Registrar
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModa2">
+                        Login
+                    </button>
+                    <div class="modal" id="exampleModa2">
+                        <div class="modal-dialog">
+                            <div class="modal-content modal-sm">
+                                <div class="modal-body">
+                                    <form>
+                                        <img class="logo-img-modal" src="../dist/img/Recurso 2.webp" alt="">
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Nombre de
+                                                usuario:</label>
+                                            <input type="username" class="form-control" id="exampleInputUsername1" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" />
+                                        </div>
+                                        <button type="submit" class="btn btn-secondary my-5">
+                                            Registrar
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <button type="button" class="btn btn-primary mr-2" data-bs-toggle="modal"
-                    data-bs-target="#exampleModa2">
-                    Login
-                </button>
+
 
 
             </div>
@@ -65,31 +121,21 @@
 
 
         <!-- Top 10-->
-        <div class="color-one pb-5">
-            <h2 class="pt-3 pb-3">Top 10 Recipes</h2>
-            <div class="container d-flex flex-wrap gap-4 ">
-                <section class="container">
-        
-                    <div class="header pb-5">
-                        <div class="pt-5 ">
-                            <div class="container d-flex flex-wrap gap-4 row-2">
-                                <div  v-for="(item, index) in top" class="col-md-2">
-                                    <recipe-card :image="item.image" :category="item.category" :name="item.name"
-                                        :description="item.description" :likes="item.likes" :index="item.index"
-                                        v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
-                                        ></recipe-card>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <!-- Modal -->
-                    <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients"
-                        :instructions="recipe.instructions"></recipe-details>
-                    </section>
-            </div>
-        </div>
 
+        <section class=" row mt-5">
+            <nav class="container">
+                <h2 class="mt-3 mb-5">Top 10 Recipes</h2>
+                <section class="row  ms-1 mb-1">
+                    <div v-for="(item, index) in top" class="col-md-3 pt-3 pb-3">
+                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                            :description="item.description" :likes="item.likes" :index="item.index"
+                            v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
+                            v-on:recipedetails="onClickRecipeTop"></recipe-card>
+                    </div>
+                </section>
+                <recipe-details :image="top[selectedIndex].image" :name="top[selectedIndex].name" :ingredients="top[selectedIndex].ingredients" :instructions="top[selectedIndex].instructions"></recipe-details>
+            </nav>
+        </section>
 
 
 
@@ -103,35 +149,58 @@
                     <recipe-category-btn :name="category.name"
                         v-on:selectedcategory="onClickSelectedCategory"></recipe-category-btn>
                 </div>
-
             </div>
 
-
-            <div class="header pb-5">
-                <div class="pt-5 ">
-                    <div class="container d-flex flex-wrap gap-4 row-2">
-                        <div v-if="hasRecipes" v-for="(item, index) in recipes" class="col-md-2">
-                            <recipe-card :image="item.image" :category="item.category" :name="item.name"
-                                :description="item.description" :likes="item.likes" :index="item.id"
-                                v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
-                                v-on:recipedetails="onClickRecipeDetails"></recipe-card>
-                        </div>
-                        <p v-else class="fw-bold">No recipes for this category</p>
+            <section class="container row mt-5">
+                <section class="row  ms-1 mb-1">
+                    <div v-for="(item, index) in recipes" class="col-md-3 pt-3 pb-3">
+                        <recipe-card :image="item.image" :category="item.category" :name="item.name"
+                            :description="item.description" :likes="item.likes" :index="item.id"
+                            v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
+                            v-on:recipedetails="onClickRecipeDetails"></recipe-card>
                     </div>
-                </div>
-            </div>
+                </section>
+            </section>
 
             <!-- Modal -->
             <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients"
                 :instructions="recipe.instructions"></recipe-details>
+        </section>
+
+
+
+
+    </div>
+
+    <!--Footer-->
+
+    <footer class="bg text-center text-white ">
+        <div class="container p-4 pb-0">
+            <section class="mb-4">
+                <!-- fb -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <img src="../dist/img/Icon/facebook.webp" alt="">
+                </a>
+
+                <!-- igr -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <img src="../dist/img/Icon/instagram.webp" alt="">
+                </a>
+
+                <!-- tw -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <img src="../dist/img/Icon/signo-de-twitter.webp" alt="">
+                </a>
             </section>
-
-
-            <!-- Footer -->
-
         </div>
 
-
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="#">healthyrecipes.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 
     <!-- js bs-->

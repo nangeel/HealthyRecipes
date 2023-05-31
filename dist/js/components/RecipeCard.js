@@ -43,7 +43,7 @@ app.component('recipe-card', {
 
     template:
         /*html*/
-        `<div class="card" style="width: 10rem">
+        `<div class="card">
     <img v-bind:src="image" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{name}}</h5>

@@ -5,28 +5,11 @@ const app = Vue.createApp({
             logo: "./img/Recurso 2.webp",
             imagePrincipal: "./img/img.inicio.webp",
             likes: 15,
-            tittleCategories: "Categories",
-            tittleMenu: "Menu",
             categories: [
 
             ],
-            difficulty: [
-                { id: 10, name: "Easy" },
-                { id: 20, name: "Medium" },
-                { id: 30, name: "Hard" },
-            ],
-            holidays: [
-                { id: 100, name: "All" },
-                { id: 200, name: "Birthday" },
-                { id: 300, name: "Father's day" },
-                { id: 400, name: "Mother's day" },
-                { id: 500, name: "Children's day" },
-                { id: 600, name: "Christmas" },
-                { id: 700, name: "Summer" },
-            ],
             all_recipes: [],
             selectedIndex: 0,
-            hasRecipes: true,
             recipes: [
 
 
@@ -217,7 +200,9 @@ const app = Vue.createApp({
                 )
 
         },
-
+        onClickRecipeDetailsTop(index) {
+            this.selectedIndex = index;
+        },
 
 
 
